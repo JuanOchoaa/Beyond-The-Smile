@@ -22,6 +22,17 @@ if (header) {
   onScroll();
 }
 
+// Delay escalonado automático para grupos de tarjetas (data-stagger)
+// Debe ejecutarse ANTES del observador de revelado: agrega la clase
+// "reveal" a estas tarjetas, y el observador solo detecta elementos
+// que ya tengan esa clase en el momento en que arma su lista.
+(function () {
+  document.querySelectorAll('[data-stagger] > *').forEach(function (el, i) {
+    el.classList.add('reveal');
+    el.style.transitionDelay = (Math.min(i, 5) * 0.09) + 's';
+  });
+})();
+
 // Revelado de elementos al hacer scroll (fade-up / scale / lateral)
 (function () {
   var selector = '.reveal, .reveal-scale, .reveal-left, .reveal-right';
@@ -43,14 +54,6 @@ if (header) {
   }, { threshold: 0.14, rootMargin: '0px 0px -60px 0px' });
 
   els.forEach(function (el) { observer.observe(el); });
-})();
-
-// Delay escalonado automático para grupos de tarjetas (data-stagger)
-(function () {
-  document.querySelectorAll('[data-stagger] > *').forEach(function (el, i) {
-    el.classList.add('reveal');
-    el.style.transitionDelay = (Math.min(i, 5) * 0.09) + 's';
-  });
 })();
 
 // Contador animado para números destacados (data-count="40")
