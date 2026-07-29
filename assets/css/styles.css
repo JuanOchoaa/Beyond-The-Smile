@@ -376,7 +376,10 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
   overflow: hidden; transition: transform .35s var(--ease), box-shadow .35s ease;
 }
 .technique-card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -24px rgba(59,63,58,.35); }
-.technique-card-head { padding: 14px 22px; font-weight: 600; font-size: 0.95rem; color: #fff; }
+.technique-card-head {
+  padding: 14px 22px; font-weight: 600; font-size: 0.95rem; color: #fff;
+  min-height: 108px; display: flex; align-items: center;
+}
 .technique-card-head.c-sage { background: var(--sage); }
 .technique-card-head.c-dusty { background: var(--dusty-deep); }
 .technique-card-head.c-stone { background: var(--stone); }
@@ -549,6 +552,14 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
   box-shadow: 0 20px 40px -22px rgba(59,63,58,.4);
 }
 .page-hero-badge img { width: 100%; height: 100%; object-fit: cover; }
+.hero-oval-frame {
+  border-radius: 50%;
+  overflow: hidden;
+  aspect-ratio: 6/5;
+  border: 8px solid var(--paper);
+  box-shadow: 0 40px 70px -30px rgba(59,63,58,.4);
+}
+.hero-oval-frame img { width: 100%; height: 100%; object-fit: cover; }
 
 /* Pager */
 .pager { display: flex; justify-content: space-between; align-items: center; }
