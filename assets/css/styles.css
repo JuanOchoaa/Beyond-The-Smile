@@ -228,6 +228,9 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .value-icon.c-dusty { background: var(--dusty); color: #fff; }
 .value-icon.c-parchment { background: var(--parchment); color: var(--sage-deep); }
 .value-icon.c-stone { background: var(--stone); color: #fff; }
+.value-icon.icon-plain { background: none; overflow: visible; width: auto; height: 96px; border-radius: 0; }
+.value-icon.icon-plain img { width: auto; height: 100%; object-fit: contain; filter: drop-shadow(0 12px 18px rgba(59,63,58,.28)); }
+.value-card:hover .value-icon.icon-plain { box-shadow: none; }
 .value-card p { font-size: 0.9rem; max-width: 24ch; margin: 0 auto; }
 
 /* Topic cards (circular icon images from user) */
