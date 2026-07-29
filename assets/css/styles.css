@@ -375,10 +375,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .fact-box:hover { transform: translateY(-5px); }
 .fact-box .fact-emoji { font-size: 1.8rem; margin-bottom: 10px; display: block; }
 .fact-icon { width: 46px; height: 46px; object-fit: contain; display: block; margin-bottom: 12px; }
-.fact-icon-map {
-  width: 150px; height: auto; background: #fff;
-  border: 2px solid var(--ink); border-radius: 10px; padding: 8px;
-}
+.fact-icon-map { width: 150px; height: auto; }
 .fact-box h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .fact-box p { font-size: 0.9rem; margin: 0; }
 .fact-box ul { margin: 0; padding-left: 18px; font-size: 0.9rem; color: var(--ink-soft); }
