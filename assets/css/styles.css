@@ -308,7 +308,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
 
 /* Texto + imagen a media sangría */
-.split-media { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; margin-bottom: 56px; }
+.split-media { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; margin-top: 8px; margin-bottom: 56px; }
 .split-media-figure { position: relative; display: flex; justify-content: center; }
 .split-media-blob {
   position: absolute; inset: 6% 10%; border-radius: 50%;
