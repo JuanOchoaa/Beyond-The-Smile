@@ -5,26 +5,25 @@
 Beyond-The-Smile/
 ├── index.html              → Inicio (tiene que quedarse en la raíz para Netlify)
 ├── pages/
-│   ├── conocenos.html      → Equipo (foto grupal + parejas)
-│   ├── salud-periodontal.html → Página completa con el contenido que enviaste
-│   ├── tecnicas-cepillado.html   → "contenido en construcción"
-│   ├── factores-de-riesgo.html   → "contenido en construcción"
-│   ├── enjuagues-bucales.html    → "contenido en construcción"
+│   ├── conocenos.html      → Equipo (foto grupal + parejas + 2 filas pendientes)
+│   ├── salud-periodontal.html → Contenido completo
+│   ├── tecnicas-cepillado.html   → Contenido completo
+│   ├── factores-de-riesgo.html   → Contenido completo
+│   ├── enjuagues-bucales.html    → Contenido completo
 │   └── contacto.html       → formulario listo para Netlify Forms (gratis, sin backend)
 └── assets/
     ├── css/styles.css      → estilos compartidos (colores, animaciones, menú móvil)
     ├── js/script.js        → interacciones compartidas
     ├── logo/               → tu logo real
-    ├── icons/              → los 4 íconos circulares (salud periodontal, técnicas de cepillado, factores de riesgo, enjuagues bucales)
+    ├── icons/              → íconos e imágenes propias de cada tema
     └── team/                → foto grupal + las 2 fotos de pareja
 ```
-Las 3 páginas de tema pendientes están marcadas como "contenido en construcción" — reemplázalas cuando tengas el texto de cada tema (usa `pages/salud-periodontal.html` como modelo de qué bloques usar: comparativas, chips de iconos, callouts, etc.)
+Las 4 páginas de tema ya tienen contenido completo (comparativas, chips de iconos, callouts, pasos numerados, tarjetas de producto, etc.)
 
 ## Pendientes / marcado con [corchetes]
-- `[Universidad]`, `[Facultad]`, `[Sponsor]` en Conócenos y en el footer
 - Texto de presentación del equipo en `conocenos.html` (dejé el espacio reservado tal como pediste)
-- Contenido de las 3 páginas de tema restantes (Técnicas de cepillado, Factores de riesgo, Enjuagues bucales)
-- Videos reales de YouTube (hay 3 espacios reservados en la página de Inicio)
+- Foto y nombres de los 2 dúos restantes en "Integrantes" (`conocenos.html`)
+- Videos reales de YouTube (hay varios espacios `[Video pendiente]` / "Video próximamente" repartidos entre Inicio y las páginas de tema)
 
 ## Animaciones incluidas
 - Revelado de tarjetas y bloques al hacer scroll (con retraso escalonado entre elementos)
