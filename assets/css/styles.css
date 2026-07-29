@@ -314,10 +314,17 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 }
 .compare-card.c-alert { border-top-color: var(--dusty-deep); }
 .compare-card.c-stone { border-top-color: var(--stone); }
-.compare-card-img { aspect-ratio: 4/3; background: var(--ivory); border-radius: var(--radius-sm); overflow: hidden; margin-bottom: 16px; display: flex; align-items: center; justify-content: center; }
-.compare-card-img img { width: 100%; height: 100%; object-fit: contain; }
-.compare-card-img-pair { display: flex; gap: 10px; margin-bottom: 16px; }
-.compare-card-img-pair .compare-card-img { flex: 1; margin-bottom: 0; }
+.compare-card-img {
+  aspect-ratio: 3/4; background: var(--ivory); border-radius: var(--radius-sm);
+  overflow: hidden; margin-bottom: 16px;
+  box-shadow: 0 14px 26px -18px rgba(59,63,58,.35);
+}
+.compare-card-img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+/* Comparación manual/eléctrico dentro de una misma tarjeta ancha */
+.brush-pick-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 26px; margin-top: 20px; }
+.brush-pick h4 { font-family: var(--font-display); font-size: 1.15rem; font-weight: 500; color: var(--ink); margin: 0 0 6px; }
+.brush-pick p { font-size: 0.92rem; margin: 0; }
 .compare-card:hover { transform: translateY(-6px); box-shadow: 0 24px 40px -24px rgba(59,63,58,.35); }
 .compare-card h3 { font-family: var(--font-display); font-size: 1.4rem; margin-bottom: 14px; }
 .compare-card ul { margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 0.94rem; }
@@ -623,7 +630,7 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
   .carousel-arrow-next { right: 4px; }
 }
 @media (max-width: 560px) {
-  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .chip-row-cols2, .technique-grid { grid-template-columns: 1fr; }
+  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .chip-row-cols2, .technique-grid, .brush-pick-grid { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
   .collage-col { flex: 1 1 100%; }
   .carousel-arrow { display: none; }
