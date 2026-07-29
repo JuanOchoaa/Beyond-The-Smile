@@ -88,3 +88,54 @@ if (header) {
 
   counters.forEach(function (el) { obs.observe(el); });
 })();
+
+// Carrusel de videos: auto-scroll a la izquierda, pausa en hover,
+// flechas para navegar y snap para no cortar ningún video a la mitad.
+(function () {
+  var track = document.querySelector('.video-carousel-track');
+  if (!track) return;
+  var carousel = track.closest('.video-carousel');
+  var prevBtn = carousel.querySelector('.carousel-arrow-prev');
+  var nextBtn = carousel.querySelector('.carousel-arrow-next');
+  var reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  var paused = false;
+  var pauseUntil = 0;
+
+  carousel.addEventListener('mouseenter', function () { paused = true; });
+  carousel.addEventListener('mouseleave', function () { paused = false; });
+  carousel.addEventListener('touchstart', function () { paused = true; }, { passive: true });
+  carousel.addEventListener('touchend', function () { paused = false; pauseUntil = Date.now() + 2000; }, { passive: true });
+
+  function slideStep() {
+    var slide = track.querySelector('.video-carousel-slide');
+    if (!slide) return 300;
+    var style = getComputedStyle(track);
+    var gap = parseFloat(style.columnGap || style.gap || 0) || 0;
+    return slide.getBoundingClientRect().width + gap;
+  }
+
+  function goTo(dir) {
+    track.scrollBy({ left: dir * slideStep(), behavior: 'smooth' });
+    pauseUntil = Date.now() + 1600;
+  }
+
+  if (prevBtn) prevBtn.addEventListener('click', function () { goTo(-1); });
+  if (nextBtn) nextBtn.addEventListener('click', function () { goTo(1); });
+
+  if (!reducedMotion) {
+    (function loop() {
+      if (!paused && Date.now() > pauseUntil) {
+        var max = track.scrollWidth - track.clientWidth;
+        if (max > 1) {
+          if (track.scrollLeft >= max - 1) {
+            track.scrollLeft = 0;
+          } else {
+            track.scrollLeft += 0.6;
+          }
+        }
+      }
+      requestAnimationFrame(loop);
+    })();
+  }
+})();

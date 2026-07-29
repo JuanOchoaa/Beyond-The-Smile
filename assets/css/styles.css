@@ -249,14 +249,16 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .topic-card:hover .topic-card-cta svg { transform: translateX(3px); }
 
 /* Photo collage (quiénes somos, home) */
-.photo-collage { display: grid; grid-template-columns: repeat(4, 1fr); gap: 14px; }
+.photo-collage { display: flex; gap: 14px; }
 .collage-col {
   aspect-ratio: 3/5;
+  flex: 1 1 0;
+  min-width: 0;
   border-radius: var(--radius-sm);
   overflow: hidden;
   background: var(--paper);
   border: 1px solid var(--line);
-  transition: transform .4s var(--ease), box-shadow .4s ease;
+  transition: transform .4s var(--ease), box-shadow .4s ease, flex .5s var(--ease), opacity .4s ease;
 }
 .collage-col:hover { transform: translateY(-6px); box-shadow: 0 20px 34px -20px rgba(59,63,58,.35); }
 .collage-col:nth-child(2), .collage-col:nth-child(4) { margin-top: 26px; }
@@ -267,6 +269,10 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
   border: 1.5px dashed var(--stone);
   color: var(--stone);
   font-size: 1.6rem;
+}
+@media (hover: hover) {
+  .photo-collage:hover .collage-col { flex: 1 1 0; opacity: .5; }
+  .photo-collage:hover .collage-col:hover { flex: 2.6 1 0; opacity: 1; }
 }
 
 /* Stat strip visual */
@@ -458,6 +464,33 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
 .video-placeholder-inner p { color: #fff; font-weight: 600; margin: 0 0 4px; }
 .video-placeholder-inner span { font-size: 0.8rem; color: #D9DDD8; }
 
+/* Carrusel de videos (auto-scroll + flechas + zoom en hover) */
+.video-carousel { position: relative; margin-top: 44px; }
+.video-carousel-track {
+  display: flex; gap: 24px;
+  overflow-x: auto; overflow-y: hidden;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  padding: 14px 4px 20px;
+  -ms-overflow-style: none; scrollbar-width: none;
+}
+.video-carousel-track::-webkit-scrollbar { display: none; }
+.video-carousel-slide { flex: 0 0 clamp(240px, 40%, 380px); scroll-snap-align: start; }
+.video-carousel-slide .video-placeholder { transition: transform .4s var(--ease), box-shadow .4s ease; }
+.video-carousel-slide:hover .video-placeholder { transform: scale(1.045); box-shadow: 0 28px 48px -22px rgba(59,63,58,.4); }
+.carousel-arrow {
+  position: absolute; top: 50%; transform: translateY(-50%);
+  width: 44px; height: 44px; border-radius: 50%;
+  background: var(--paper); border: 1px solid var(--line);
+  display: flex; align-items: center; justify-content: center;
+  cursor: pointer; z-index: 3; color: var(--sage-deep);
+  box-shadow: 0 14px 26px -14px rgba(59,63,58,.35);
+  transition: background .3s ease, color .3s ease, transform .3s ease;
+}
+.carousel-arrow:hover { background: var(--sage-deep); color: #fff; }
+.carousel-arrow-prev { left: -22px; }
+.carousel-arrow-next { right: -22px; }
+
 /* CTA banner */
 .cta-banner {
   background: var(--dusty);
@@ -528,17 +561,23 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
 @media (max-width: 900px) {
   .main-nav { display: none; }
   .hero-inner { grid-template-columns: 1fr; }
-  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .photo-collage { grid-template-columns: repeat(2, 1fr); }
+  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
   .stat-strip { grid-template-columns: 1fr; text-align: center; }
   .stat-visual { margin: 0 auto; }
+  .photo-collage { flex-wrap: wrap; }
+  .collage-col { flex: 1 1 calc(50% - 7px); }
   .collage-col:nth-child(2), .collage-col:nth-child(4) { margin-top: 0; }
   .team-row, .team-row:nth-child(even) { flex-direction: column; gap: 24px; }
   .team-row-photo { flex: none; width: 100%; }
+  .carousel-arrow-prev { left: 4px; }
+  .carousel-arrow-next { right: 4px; }
 }
 @media (max-width: 560px) {
-  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .photo-collage, .chip-row-cols2 { grid-template-columns: 1fr; }
+  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .chip-row-cols2 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
+  .collage-col { flex: 1 1 100%; }
+  .carousel-arrow { display: none; }
 }
 
 a:focus-visible, button:focus-visible { outline: 2px solid var(--dusty-deep); outline-offset: 2px; }
