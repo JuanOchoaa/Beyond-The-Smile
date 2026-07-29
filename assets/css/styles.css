@@ -383,6 +383,13 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .technique-card-head.c-sage { background: var(--sage); }
 .technique-card-head.c-dusty { background: var(--dusty-deep); }
 .technique-card-head.c-stone { background: var(--stone); }
+.technique-card-img {
+  aspect-ratio: 4/3;
+  background: var(--ivory);
+  display: flex; align-items: center; justify-content: center;
+  overflow: hidden;
+}
+.technique-card-img img { width: 100%; height: 100%; object-fit: contain; }
 .technique-card-body { padding: 22px; }
 .technique-card-body p { font-size: 0.92rem; margin-bottom: 0; }
 .technique-card-link {
