@@ -10,6 +10,18 @@ if (toggle && nav) {
     var isOpen = nav.classList.toggle('open');
     toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
+  nav.querySelectorAll('a').forEach(function (link) {
+    link.addEventListener('click', function () {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+  document.addEventListener('click', function (e) {
+    if (nav.classList.contains('open') && !nav.contains(e.target) && !toggle.contains(e.target)) {
+      nav.classList.remove('open');
+      toggle.setAttribute('aria-expanded', 'false');
+    }
+  });
 }
 
 // Header: sombra + compactado al hacer scroll

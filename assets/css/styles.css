@@ -129,7 +129,19 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 }
 .main-nav a:hover, .main-nav a.active { color: var(--sage-deep); }
 .main-nav a:hover::after, .main-nav a.active::after { width: 100%; }
-.nav-toggle { display: none; }
+.nav-toggle {
+  display: none; flex-direction: column; justify-content: center; align-items: center;
+  gap: 5px; width: 40px; height: 40px; padding: 0; margin: 0;
+  background: none; border: none; cursor: pointer; flex-shrink: 0;
+}
+.nav-toggle span {
+  display: block; width: 24px; height: 2px; border-radius: 2px;
+  background: var(--sage-deep);
+  transition: transform .3s var(--ease), opacity .2s ease;
+}
+.nav-toggle[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.nav-toggle[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.nav-toggle[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
 
 /* =========================================================
    HERO
@@ -753,7 +765,19 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
    RESPONSIVE
    ========================================================= */
 @media (max-width: 900px) {
-  .main-nav { display: none; }
+  .nav-toggle { display: flex; }
+  .main-nav {
+    position: absolute; top: 100%; left: 0; right: 0;
+    flex-direction: column; gap: 2px;
+    background: var(--paper); border-top: 1px solid var(--line);
+    padding: 8px 24px 4px; box-shadow: 0 24px 34px -22px rgba(59,63,58,.35);
+    max-height: 0; opacity: 0; overflow: hidden;
+    transition: max-height .35s var(--ease), opacity .3s ease;
+  }
+  .main-nav.open { max-height: 420px; opacity: 1; overflow-y: auto; }
+  .main-nav a { padding: 13px 2px; border-bottom: 1px solid var(--line); }
+  .main-nav a::after { display: none; }
+  .main-nav a:last-child { border-bottom: none; }
   .hero-inner { grid-template-columns: 1fr; }
   .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .technique-grid, .grid-cols-3, .product-grid { grid-template-columns: repeat(2, 1fr); }
   .footer-grid { grid-template-columns: 1fr 1fr; }
