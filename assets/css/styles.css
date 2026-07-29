@@ -219,7 +219,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .value-icon {
   width: 74px; height: 74px; border-radius: 50%;
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 18px;
+  margin: 0 auto 18px; font-size: 1.9rem;
   transition: transform .4s var(--ease), box-shadow .4s ease;
 }
 .value-card:hover .value-icon { transform: scale(1.08) rotate(-4deg); box-shadow: 0 16px 28px -14px rgba(59,63,58,.35); }
@@ -378,7 +378,9 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
   transition: transform .3s ease, background .3s ease, border-color .3s ease;
 }
 .chip:hover { transform: translateY(-4px); background: var(--parchment); border-color: var(--dusty); }
-.chip .emoji { font-size: 1.15rem; }
+.chip .emoji { font-size: 1.35rem; }
+.chip-row-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 32px; }
+.chip-row-grid .chip { width: 100%; }
 
 /* Tarjetas de técnica (cabecera de color + cuerpo) */
 .technique-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
@@ -410,6 +412,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .technique-card-link:hover { text-decoration: underline; }
 
 /* Video destacado con descripción (grillas de aprendizaje) */
+.video-feature .video-placeholder { aspect-ratio: 4/3; }
 .video-feature p { font-size: 0.9rem; margin: 14px 0 0; }
 .video-feature a { font-size: 0.85rem; font-weight: 600; color: var(--dusty-deep); text-decoration: none; }
 .video-feature a:hover { text-decoration: underline; }
@@ -456,7 +459,7 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
   width: 64px; height: 64px; border-radius: 50%;
   background: var(--paper); border: 1px solid var(--line);
   display: flex; align-items: center; justify-content: center;
-  margin: 0 auto 12px; font-size: 1.6rem;
+  margin: 0 auto 12px; font-size: 1.75rem;
   transition: transform .3s var(--ease);
 }
 .prevention-item:hover .prevention-icon { transform: scale(1.1) rotate(-6deg); background: var(--dusty); }
