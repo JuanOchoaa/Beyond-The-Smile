@@ -348,6 +348,21 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .chip:hover { transform: translateY(-4px); background: var(--parchment); border-color: var(--dusty); }
 .chip .emoji { font-size: 1.15rem; }
 
+/* Tarjeta de video incrustado entre secciones de contenido */
+.video-card {
+  display: flex; align-items: center; gap: 22px;
+  background: var(--sage-deep); color: #fff;
+  border-radius: var(--radius); padding: 26px 30px; margin: 48px 0;
+}
+.video-card-play {
+  flex: 0 0 auto; width: 56px; height: 56px; border-radius: 50%;
+  background: rgba(255,255,255,.16);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 1.3rem;
+}
+.video-card-info h3 { color: #fff; margin-bottom: 4px; }
+.video-card-info p { color: rgba(255,255,255,.78); margin: 0; font-size: 0.88rem; }
+
 /* Callout */
 .callout {
   background: var(--parchment);
