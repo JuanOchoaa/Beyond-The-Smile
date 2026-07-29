@@ -315,7 +315,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .compare-card.c-alert { border-top-color: var(--dusty-deep); }
 .compare-card.c-stone { border-top-color: var(--stone); }
 .compare-card-img {
-  aspect-ratio: 3/4; background: var(--ivory); border-radius: var(--radius-sm);
+  aspect-ratio: 4/3; max-height: 220px; background: var(--ivory); border-radius: var(--radius-sm);
   overflow: hidden; margin-bottom: 16px;
   box-shadow: 0 14px 26px -18px rgba(59,63,58,.35);
 }
