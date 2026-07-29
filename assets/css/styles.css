@@ -420,6 +420,23 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .video-feature a { font-size: 0.85rem; font-weight: 600; color: var(--dusty-deep); text-decoration: none; }
 .video-feature a:hover { text-decoration: underline; }
 
+/* Lista con ícono (tipos de enjuague, marcas) */
+.icon-list { display: flex; flex-direction: column; gap: 18px; margin-top: 18px; }
+.icon-list-item { display: flex; gap: 14px; align-items: flex-start; }
+.icon-list-icon {
+  flex: 0 0 auto; width: 42px; height: 42px; border-radius: 50%;
+  background: var(--ivory); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
+}
+.icon-list-item h4 { margin: 0 0 4px; font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; color: var(--ink); }
+.icon-list-item p { margin: 0; font-size: 0.88rem; }
+
+/* Barra final destacada */
+.note-bar {
+  background: var(--sage-deep); color: #fff; border-radius: 999px;
+  padding: 18px 30px; display: flex; align-items: center; justify-content: center; gap: 12px;
+  text-align: center; font-family: var(--font-display); font-size: 1.05rem;
+}
+
 /* Tarjeta de video incrustado entre secciones de contenido */
 .video-card {
   display: flex; align-items: center; gap: 22px;
