@@ -358,15 +358,23 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .compare-card li { margin-bottom: 8px; }
 
 /* Simple fact cards row (world/ecuador/risk) */
-.fact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; }
+.fact-row { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 36px; align-items: stretch; }
 .fact-box { background: var(--paper); border-radius: var(--radius-sm); padding: 26px; border: 1px solid var(--line); transition: transform .3s var(--ease); }
 .fact-box:hover { transform: translateY(-5px); }
 .fact-box .fact-emoji { font-size: 1.8rem; margin-bottom: 10px; display: block; }
+.fact-icon { width: 46px; height: 46px; object-fit: contain; display: block; margin-bottom: 12px; }
+.fact-icon-map { width: 150px; height: auto; }
 .fact-box h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .fact-box p { font-size: 0.9rem; margin: 0; }
 .fact-box ul { margin: 0; padding-left: 18px; font-size: 0.9rem; color: var(--ink-soft); }
 .fact-box li { margin-bottom: 4px; }
 .fact-box li:last-child { margin-bottom: 0; }
+.fact-stat { display: flex; flex-direction: column; align-items: flex-start; gap: 8px; margin-top: 16px; }
+.fact-stat img { width: 100%; max-width: 220px; height: auto; display: block; }
+.fact-stat span { font-size: 0.82rem; color: var(--ink-soft); font-weight: 500; }
+.risk-list { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 12px; }
+.risk-list li { display: flex; align-items: center; gap: 12px; margin: 0; font-size: 0.9rem; color: var(--ink-soft); }
+.risk-list img { width: 28px; height: 28px; object-fit: contain; flex-shrink: 0; }
 
 /* Tarjeta del mapa de prevalencia (Ecuador) */
 .map-card {
