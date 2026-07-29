@@ -463,6 +463,9 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
   display: flex; align-items: center; justify-content: center;
   font-weight: 600; font-family: var(--font-display); font-size: 1.1rem;
 }
+.step-item:nth-child(4n+2)::before { background: var(--dusty-deep); }
+.step-item:nth-child(4n+3)::before { background: var(--stone); }
+.step-item:nth-child(4n+4)::before { background: var(--sage); }
 .step-item h3 { margin: 0 0 6px; font-size: 1.1rem; }
 .step-item p { margin: 0; font-size: 0.92rem; }
 
@@ -476,14 +479,19 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .references-box a:hover { color: var(--parchment); }
 
 /* Navegación rápida por anclas dentro de la página */
-.page-subnav { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 28px; }
+.page-subnav {
+  display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px;
+  padding: 22px; background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  box-shadow: 0 24px 46px -30px rgba(59,63,58,.3);
+}
 .page-subnav a {
-  display: inline-flex; align-items: center;
-  background: var(--paper); border: 1px solid var(--line); border-radius: 999px;
-  padding: 8px 16px; font-size: 0.85rem; font-weight: 600; color: var(--sage-deep);
+  display: inline-flex; align-items: center; gap: 9px;
+  background: var(--ivory); border: 1px solid var(--line); border-radius: 999px;
+  padding: 12px 20px; font-size: 0.95rem; font-weight: 600; color: var(--sage-deep);
   text-decoration: none; transition: background .3s ease, color .3s ease, transform .3s ease;
 }
-.page-subnav a:hover { background: var(--sage-deep); color: #fff; transform: translateY(-2px); }
+.page-subnav a span { font-size: 1.15rem; }
+.page-subnav a:hover { background: var(--sage-deep); color: #fff; transform: translateY(-3px); }
 
 /* Comparison table */
 .table-wrap { margin: 32px 0; border-radius: var(--radius-sm); overflow: hidden; border: 1px solid var(--line); }
@@ -617,6 +625,7 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
 .hero-essentials {
   background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
   padding: 28px 30px; box-shadow: 0 26px 50px -30px rgba(59,63,58,.3);
+  display: flex; flex-direction: column; justify-content: center;
 }
 .hero-essentials h3 { margin-bottom: 14px; }
 .hero-essentials ul { margin: 0; padding-left: 20px; color: var(--ink-soft); font-size: 0.92rem; }
