@@ -271,8 +271,8 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
   font-size: 1.6rem;
 }
 @media (hover: hover) {
-  .photo-collage:hover .collage-col { flex: 1 1 0; opacity: .5; }
-  .photo-collage:hover .collage-col:hover { flex: 2.6 1 0; opacity: 1; }
+  .photo-collage:hover .collage-col { flex: 0.7 1 0; opacity: .4; }
+  .photo-collage:hover .collage-col:hover { flex: 3.6 1 0; opacity: 1; }
 }
 
 /* Stat strip visual */
