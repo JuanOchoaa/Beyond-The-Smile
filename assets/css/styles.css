@@ -403,6 +403,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 }
 .chip:hover { transform: translateY(-4px); background: var(--parchment); border-color: var(--dusty); }
 .chip .emoji { font-size: 1.35rem; }
+.chip-icon { width: 30px; height: 30px; object-fit: contain; flex-shrink: 0; }
 .chip-row-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 32px; }
 .chip-row-grid .chip { width: 100%; }
 
