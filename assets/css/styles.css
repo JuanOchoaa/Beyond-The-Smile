@@ -307,6 +307,26 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 /* Modificador reutilizable de 3 columnas (mantiene el colapso responsive) */
 .grid-cols-3 { grid-template-columns: repeat(3, 1fr); }
 
+/* Texto + imagen a media sangría */
+.split-media { display: grid; grid-template-columns: 1.15fr 1fr; gap: 40px; align-items: center; margin-bottom: 56px; }
+.split-media-figure { position: relative; display: flex; justify-content: center; }
+.split-media-blob {
+  position: absolute; inset: 6% 10%; border-radius: 50%;
+  background: radial-gradient(circle, var(--dusty) 0%, transparent 72%);
+  opacity: .55; filter: blur(4px); z-index: 0;
+  animation: float 8s ease-in-out infinite;
+}
+.split-media-figure img {
+  position: relative; z-index: 1; width: 100%; max-width: 380px; height: auto; display: block;
+  filter: drop-shadow(0 20px 30px rgba(59,63,58,.25));
+  transition: transform .45s var(--ease);
+}
+.split-media-figure:hover img { transform: translateY(-6px) scale(1.03) rotate(-1deg); }
+@media (max-width: 800px) {
+  .split-media { grid-template-columns: 1fr; }
+  .split-media-figure { order: -1; margin-bottom: 8px; }
+}
+
 /* Two-column comparison cards */
 .compare-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 32px; }
 .compare-card {
