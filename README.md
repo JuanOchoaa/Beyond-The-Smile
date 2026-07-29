@@ -1,16 +1,24 @@
 # Beyond the Smile — sitio web
 
-## Qué hay en esta carpeta
-- `index.html` → Inicio
-- `conocenos.html` → Equipo (foto grupal + parejas)
-- `salud-periodontal.html` → Página completa con el contenido que enviaste
-- `tecnicas-cepillado.html`, `factores-de-riesgo.html`, `enjuagues-bucales.html` → estructura lista, marcadas como "contenido en construcción" — reemplázalas cuando tengas el texto de cada tema (usa `salud-periodontal.html` como modelo de qué bloques usar: comparativas, chips de iconos, callouts, etc.)
-- `contacto.html` → formulario listo para Netlify Forms (gratis, sin backend)
-- `styles.css` / `script.js` → compartidos por todas las páginas (colores, animaciones, menú móvil)
-- `assets/logo/` → tu logo real
-- `assets/icons/` → los 4 íconos circulares que enviaste (salud periodontal, técnicas de cepillado, factores de riesgo, enjuagues bucales)
-- `assets/team/` → foto grupal + las 2 fotos de pareja que enviaste
-- `build.py` → el script que generó todo (solo se necesita si quieres regenerar el sitio completo)
+## Estructura de carpetas
+```
+Beyond-The-Smile/
+├── index.html              → Inicio (tiene que quedarse en la raíz para Netlify)
+├── pages/
+│   ├── conocenos.html      → Equipo (foto grupal + parejas)
+│   ├── salud-periodontal.html → Página completa con el contenido que enviaste
+│   ├── tecnicas-cepillado.html   → "contenido en construcción"
+│   ├── factores-de-riesgo.html   → "contenido en construcción"
+│   ├── enjuagues-bucales.html    → "contenido en construcción"
+│   └── contacto.html       → formulario listo para Netlify Forms (gratis, sin backend)
+└── assets/
+    ├── css/styles.css      → estilos compartidos (colores, animaciones, menú móvil)
+    ├── js/script.js        → interacciones compartidas
+    ├── logo/               → tu logo real
+    ├── icons/              → los 4 íconos circulares (salud periodontal, técnicas de cepillado, factores de riesgo, enjuagues bucales)
+    └── team/                → foto grupal + las 2 fotos de pareja
+```
+Las 3 páginas de tema pendientes están marcadas como "contenido en construcción" — reemplázalas cuando tengas el texto de cada tema (usa `pages/salud-periodontal.html` como modelo de qué bloques usar: comparativas, chips de iconos, callouts, etc.)
 
 ## Pendientes / marcado con [corchetes]
 - `[Universidad]`, `[Facultad]`, `[Sponsor]` en Conócenos y en el footer
@@ -27,7 +35,7 @@
 - Todo respeta `prefers-reduced-motion` (se desactiva automáticamente para personas sensibles al movimiento)
 
 ## Cómo editar contenido
-Igual que en el proyecto anterior: abre cualquier `.html` con un editor de texto y edita el texto directamente. Los colores están centralizados en `styles.css`, en la sección `:root` al inicio (ya configurados con tu paleta: Sage Drift, Warm Parchment, Ivory Stillness, Dusty Petal, Stone Whisper).
+Abre cualquier `.html` (en la raíz o dentro de `pages/`) con un editor de texto y edita el texto directamente. Los colores están centralizados en `assets/css/styles.css`, en la sección `:root` al inicio (ya configurados con tu paleta: Sage Drift, Warm Parchment, Ivory Stillness, Dusty Petal, Stone Whisper).
 
 ### Reemplazar un video placeholder por uno real de YouTube
 Busca este bloque en `index.html` y reemplázalo por el código "insertar" de YouTube:
@@ -40,5 +48,5 @@ por:
   src="https://www.youtube.com/embed/TU_ID_DE_VIDEO" allowfullscreen></iframe>
 ```
 
-## Cómo publicarlo en Netlify
-Igual que antes: arrastra la carpeta `beyond-the-smile` completa a [netlify.com](https://www.netlify.com) → Deploy manually. Todas las páginas están enlazadas con rutas relativas, así que la navegación funciona automáticamente.
+## Cómo publicarlo
+El repo está conectado a GitHub y desplegado en Netlify vía Git — cada `git push` a `main` republica el sitio automáticamente. No hace falta arrastrar carpetas a Netlify.
