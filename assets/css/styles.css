@@ -69,6 +69,7 @@ em, .script { font-style: italic; color: var(--dusty-deep); }
 }
 
 p { margin: 0 0 16px; color: var(--ink-soft); }
+.content-wrap p { margin-bottom: 22px; }
 .lead { font-size: 1.08rem; max-width: 52ch; color: var(--ink-soft); }
 
 /* Buttons */
@@ -318,9 +319,23 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .fact-box .fact-emoji { font-size: 1.8rem; margin-bottom: 10px; display: block; }
 .fact-box h3 { font-size: 1.05rem; margin-bottom: 8px; }
 .fact-box p { font-size: 0.9rem; margin: 0; }
+.fact-box ul { margin: 0; padding-left: 18px; font-size: 0.9rem; color: var(--ink-soft); }
+.fact-box li { margin-bottom: 4px; }
+.fact-box li:last-child { margin-bottom: 0; }
+
+/* Tarjeta del mapa de prevalencia (Ecuador) */
+.map-card {
+  max-width: 380px; margin: 0 auto 40px;
+  background: var(--paper); border: 1px solid var(--line); border-radius: var(--radius);
+  padding: 28px; text-align: center;
+  box-shadow: 0 26px 50px -30px rgba(59,63,58,.3);
+}
+.map-card img { width: 100%; display: block; }
+.map-card p { margin: 14px 0 0; font-size: 0.85rem; color: var(--ink-soft); }
 
 /* Icon-chip row (warning signs, prevention icons) */
 .chip-row { display: flex; flex-wrap: wrap; gap: 16px; margin-top: 32px; }
+.chip-row-cols2 { display: grid; grid-template-columns: repeat(2, 1fr); }
 .chip {
   display: flex; align-items: center; gap: 10px;
   background: var(--paper);
@@ -493,7 +508,7 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
   .team-row-photo { flex: none; width: 100%; }
 }
 @media (max-width: 560px) {
-  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .photo-collage { grid-template-columns: 1fr; }
+  .values-grid, .topics-grid, .fact-row, .compare-grid, .prevention-grid, .photo-collage, .chip-row-cols2 { grid-template-columns: 1fr; }
   .footer-grid { grid-template-columns: 1fr; }
 }
 
