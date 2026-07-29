@@ -426,7 +426,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 }
 .chip:hover { transform: translateY(-4px); background: var(--parchment); border-color: var(--dusty); }
 .chip .emoji { font-size: 1.35rem; }
-.chip-icon { width: 30px; height: 30px; object-fit: contain; flex-shrink: 0; vertical-align: middle; }
+.chip-icon { display: inline-block; width: 30px; height: 30px; object-fit: contain; flex-shrink: 0; vertical-align: middle; }
 .chip-icon-lg { width: 46px; height: 46px; margin-right: 4px; }
 .chip-icon-xl { width: 64px; height: 64px; flex-shrink: 0; }
 .cause-main { display: flex; align-items: center; gap: 16px; }
