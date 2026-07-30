@@ -491,6 +491,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
   flex: 0 0 auto; width: 42px; height: 42px; border-radius: 50%;
   background: var(--ivory); display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
 }
+.icon-list-icon img { width: 66%; height: 66%; object-fit: contain; }
 .icon-list-item h4 { margin: 0 0 4px; font-family: var(--font-display); font-size: 1.05rem; font-weight: 500; color: var(--ink); }
 .icon-list-item p { margin: 0; font-size: 0.88rem; }
 
