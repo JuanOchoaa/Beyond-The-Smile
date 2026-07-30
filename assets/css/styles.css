@@ -446,8 +446,8 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .alert-signal p { font-size: 0.9rem; font-weight: 500; margin: 0; }
 @media (max-width: 800px) { .alert-signals-grid { grid-template-columns: repeat(3, 1fr); } }
 @media (max-width: 560px) { .alert-signals-grid { grid-template-columns: repeat(2, 1fr); } }
-.chip-row-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(190px, 1fr)); gap: 16px; margin-top: 32px; }
-.chip-row-grid .chip { width: 100%; }
+.chip-row-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 16px; margin-top: 32px; }
+.chip-row-grid .chip { flex: 1 1 190px; max-width: 260px; justify-content: center; }
 
 /* Tarjetas de técnica (cabecera de color + cuerpo) */
 .technique-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; margin-top: 36px; }
