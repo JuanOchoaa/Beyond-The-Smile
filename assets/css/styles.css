@@ -598,8 +598,8 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
 .compare-table td { color: var(--ink-soft); }
 
 /* Prevention icon grid */
-.prevention-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 20px; margin-top: 32px; }
-.prevention-item { text-align: center; }
+.prevention-grid { display: flex; flex-wrap: wrap; justify-content: center; gap: 20px; margin-top: 32px; }
+.prevention-item { text-align: center; flex: 1 1 140px; max-width: 220px; }
 .prevention-icon {
   width: 64px; height: 64px; border-radius: 50%;
   background: var(--paper); border: 1px solid var(--line);
