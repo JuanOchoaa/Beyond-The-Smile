@@ -119,6 +119,28 @@ if (header) {
   carousel.addEventListener('touchstart', function () { paused = true; }, { passive: true });
   carousel.addEventListener('touchend', function () { paused = false; pauseUntil = Date.now() + 2000; }, { passive: true });
 
+  // Los iframes de YouTube se tragan los eventos del mouse, así que al pasar el
+  // cursor sobre un video el carrusel nunca recibía mouseenter y seguía
+  // desplazándose. Cubrimos cada video con una capa transparente que sí recibe
+  // el hover; al hacer clic la capa se retira y el video queda reproducible.
+  track.querySelectorAll('.video-embed').forEach(function (embed) {
+    var iframe = embed.querySelector('iframe');
+    if (!iframe) return;
+    var shield = document.createElement('button');
+    shield.type = 'button';
+    shield.className = 'video-embed-shield';
+    shield.setAttribute('aria-label', 'Reproducir: ' + (iframe.getAttribute('title') || 'video'));
+    shield.addEventListener('click', function () {
+      var src = iframe.getAttribute('src');
+      if (src && src.indexOf('autoplay=') === -1) {
+        iframe.setAttribute('src', src + (src.indexOf('?') === -1 ? '?' : '&') + 'autoplay=1');
+      }
+      shield.remove();
+      pauseUntil = Date.now() + 600000;
+    });
+    embed.appendChild(shield);
+  });
+
   function slideStep() {
     var slide = track.querySelector('.video-carousel-slide');
     if (!slide) return 300;

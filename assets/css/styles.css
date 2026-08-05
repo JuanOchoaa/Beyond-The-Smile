@@ -699,15 +699,24 @@ table.compare-table { width: 100%; border-collapse: collapse; background: var(--
 .video-carousel-track {
   display: flex; gap: 24px;
   overflow-x: auto; overflow-y: hidden;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
   padding: 14px 4px 20px;
   -ms-overflow-style: none; scrollbar-width: none;
 }
 .video-carousel-track::-webkit-scrollbar { display: none; }
-.video-carousel-slide { flex: 0 0 clamp(240px, 40%, 380px); scroll-snap-align: start; }
+.video-carousel-slide { flex: 0 0 clamp(240px, 40%, 380px); }
 .video-carousel-slide .video-placeholder { transition: transform .4s var(--ease), box-shadow .4s ease; }
 .video-carousel-slide:hover .video-placeholder { transform: scale(1.045); box-shadow: 0 28px 48px -22px rgba(59,63,58,.4); }
+.video-carousel-title { margin: 12px 0 0; font-size: 0.9rem; font-weight: 500; color: var(--ink); }
+/* Capa transparente sobre el video: recibe el hover que el iframe se traga
+   (para poder pausar el carrusel) y se retira al hacer clic. */
+.video-embed-shield {
+  position: absolute; inset: 0; z-index: 2;
+  background: transparent; border: 0; padding: 0;
+  cursor: pointer; appearance: none;
+}
+
+/* Video dentro del banner de cierre */
+.cta-video { max-width: 620px; margin: 0 auto 26px; }
 .carousel-arrow {
   position: absolute; top: 50%; transform: translateY(-50%);
   width: 44px; height: 44px; border-radius: 50%;
