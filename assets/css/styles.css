@@ -597,6 +597,7 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
 .step-item:nth-child(4n+4)::before { background: var(--sage); }
 .step-item h3 { margin: 0 0 6px; font-size: 1.1rem; }
 .step-item p { margin: 0; font-size: 0.92rem; }
+.step-item-img { float: right; width: 64px; height: 64px; object-fit: contain; margin-left: 14px; }
 
 /* Caja de referencias bibliográficas */
 .references-box { background: var(--sage-deep); color: #fff; border-radius: var(--radius); padding: 32px; margin-top: 32px; }
@@ -619,7 +620,8 @@ p { margin: 0 0 16px; color: var(--ink-soft); }
   padding: 12px 20px; font-size: 0.95rem; font-weight: 600; color: var(--sage-deep);
   text-decoration: none; transition: background .3s ease, color .3s ease, transform .3s ease;
 }
-.page-subnav a span { font-size: 1.15rem; }
+.page-subnav a span { font-size: 1.15rem; display: inline-flex; }
+.page-subnav a span img { width: 22px; height: 22px; object-fit: contain; }
 .page-subnav a:hover { background: var(--sage-deep); color: #fff; transform: translateY(-3px); }
 
 /* Comparison table */
